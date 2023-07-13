@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			font-family: "Open Sans", sans-serif;
+            background: #dfdfdf;
+			height: 750px;
+			width: 100%;
+/*			background-image: linear-gradient(blueviolet,black);*/
+            background-color: black;
+			float: left;
+		}
+		.main_box{
+			height: 650px;
+			width: 500px;
+			float: left;
+			background-color: white;
+			margin-left: 500px;
+			margin-top: 50px;
+			border-radius: 10px;
+		}
+		.h1box{
+			width: 400px;
+			height: 70px;
+			background-color: black;
+			
+			float: left;
+			margin-left: 50px;
+			margin-top: 15px;
+			border-radius: 10px;
+		}
+		.h1box h1{
+			color: white;
+			text-align: center;
+			margin-top: 15px;
+		}
+		.h1box:hover{
+		background-image: linear-gradient(blueviolet,black);
+        color:#fc999b;
+        cursor: pointer;
+        opacity: .8;
+        text-align:center;
+		}
+		.h1box p{
+			text-align: center;
+		}
+		input{
+			height: 30px;
+			width: 300px;
+			float: left;
+			margin-left: 50px;
+			margin-top: 80px;
+/*			background-color: #fc999b;*/
+            padding: 4px 15px 4px 5px;
+		}
+		form{
+			display: inline-block;
+		}
+		#button{
+			height: 30px;
+			width: 50px;
+			display: inline-block;
+            background-color:#fc999b;
+			color:#ffffff;
+			border-radius: 5px;
+			text-align:center;
+			margin-top:80px;
+			margin-left: 5px;
+			padding: 5px 15px;
+		}
+		#button:hover{
+        cursor: pointer;
+        opacity: .8;
+        text-align:center;
+        }
+        ol{
+        	margin-top: 10px;
+        margin-left: 40px;
+        margin-right: 10px;
+        padding-left: 20px;
+        }
+        ol li{
+        padding: 5px;color:#000;
+        }
+        ol li:nth-child(even){
+        background: #dfdfdf;
+        }
+        .strike{text-decoration: line-through;}
+        li:hover{
+        cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="main_box">
+			<div class="h1box">
+				<h1>To-Do List!</h1>
+				<br><br>
+				<p>Click on Add button to add, double click to<br>cross an item off.</p>
+			</div>
+			<input type="text" id="" placeholder="Enter task">
+			<div id="button">Add</div>
+			<ol></ol>
+		</div>
+	</div>
+<script type="text/javascript" src="cdn/jquery-3.6.3.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.slim.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#button').click(function(){
+			var toAdd=$('input').val();
+			$('ol').append('<li>' +toAdd+ '</li>');
+		});
+		$(document).on('dblclick','li', function(){
+        $(this).toggleClass('strike').fadeOut('slow');    
+      });
+		$('input').focus(function() {
+        $(this).val('');
+      });
+	});
+</script>
+</body>
+</html>
+
+
